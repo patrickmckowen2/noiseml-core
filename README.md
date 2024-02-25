@@ -9,6 +9,7 @@ Just for demostration, this step will:
  2. Open port 80 on firewall for this http server 
 
 
+
 ```bash
 cd ../environments/dev
 terraform init
