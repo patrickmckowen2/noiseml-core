@@ -10,6 +10,7 @@ Just for demostration, this step will:
 
 
 
+
 ```bash
 cd ../environments/dev
 terraform init
