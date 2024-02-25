@@ -43,3 +43,10 @@ resource "google_pubsub_topic" "noiseml-core-alerts-main-topic" {
 #  project_id = "noiseml-core-${local.env}"
 #  name = "noiseml-core-${local.env}"
 #}
+
+
+module "dialogflow_agent_demo" {
+  source  = "../../modules/dialogflow_agent_demo"
+}
+
+
