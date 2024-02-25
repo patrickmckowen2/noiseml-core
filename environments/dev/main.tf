@@ -5,6 +5,8 @@ locals {
 
 provider "google" {
   project = "${var.project}"
+
+  #access_token = var.access_token
 }
 
 resource "google_pubsub_topic" "noiseml-core-alerts-main-topic" {
@@ -37,7 +39,7 @@ resource "google_pubsub_topic" "noiseml-core-alerts-main-topic" {
 
 
 
-resource "google_project" "agent_project" {
-  project_id = "noiseml-core-${local.env}"
-  name = "noiseml-core-${local.env}"
-}
+#resource "google_project" "agent_project" {
+#  project_id = "noiseml-core-${local.env}"
+#  name = "noiseml-core-${local.env}"
+#}
