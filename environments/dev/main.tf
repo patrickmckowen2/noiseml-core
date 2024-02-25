@@ -7,7 +7,7 @@ provider "google" {
   project = "${var.project}"
 }
 
-resource "google_pubsub_topic" "noiseml-core-alerts-main-topic" {
+resource "google_pubsub_topic" "noiseml-core-alerts-main-topic-${local.env}" {
   name = "noiseml-core-alerts-main-topic-${local.env}"
 
   #labels = {
