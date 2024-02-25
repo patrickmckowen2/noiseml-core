@@ -16,6 +16,6 @@
 terraform {
   backend "gcs" {
     bucket = "dev-area-318003-tfstate"
-    prefix = "env/dev"
+    prefix = "noiseml/core/env/dev"
   }
 }
