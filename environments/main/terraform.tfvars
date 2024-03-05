@@ -1,1 +1,1 @@
-project="dev-area-318003"
+project="noiseml-core-prd"
