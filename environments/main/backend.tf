@@ -1,6 +1,7 @@
+
 terraform {
   backend "gcs" {
     bucket = "noiseml-core-prd-tfstate"
-    prefix = "noiseml/core/env/prod"
+    prefix = "noiseml/core/env/prd"
   }
 }

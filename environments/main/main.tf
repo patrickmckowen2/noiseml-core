@@ -1,35 +1,25 @@
-locals {
-  env = "prod"
+
+#provider "google" {
+#  project = "${var.project_id}"
+#  #access_token = var.access_token
+#  #region  = "${var.region}"
+#  #zone    = "${var.region}-a"
+#}
+
+# DEMOS
+module "dialogflow_agent_demo" {
+  source  = "../../modules/dialogflow_agent_demo"
+  project_id = "${var.project_id}"
+  region = "${var.region}"
 }
 
-provider "google" {
-  project = "${var.project}"
+# COMMON
+module "noiseml-core" {
+  source  = "../../modules/noiseml-core"
+  project_id = "${var.project_id}"
+  environment = "${var.environment}"
+  region = "${var.region}"
+  zone = "${var.zone}"
 }
 
-resource "google_pubsub_topic" "alerts-main-topic" {
-  name = "alerts-main-topic"
 
-  #labels = {
-  #  foo = "bar"
-  #}
-
-  message_retention_duration = "86600s"
-}
-
-#module "vpc" {
-#  source  = "../../modules/vpc"
-#  project = "${var.project}"
-#  env     = "${local.env}"
-#}
-#
-#module "http_server" {
-#  source  = "../../modules/http_server"
-#  project = "${var.project}"
-#  subnet  = "${module.vpc.subnet}"
-#}
-#
-#module "firewall" {
-#  source  = "../../modules/firewall"
-#  project = "${var.project}"
-#  subnet  = "${module.vpc.subnet}"
-#}
