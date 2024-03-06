@@ -1,52 +1,25 @@
 
-locals {
-  env = "dev"
-}
-
-provider "google" {
-  project = "${var.project}"
-
-  #access_token = var.access_token
-}
-
-resource "google_pubsub_topic" "noiseml-core-alerts-main-topic" {
-  name = "noiseml-core-alerts-main-topic-${local.env}"
-
-  #labels = {
-  #  foo = "bar"
-  #}
-
-  message_retention_duration = "86600s"
-}
-
-#module "vpc" {
-#  source  = "../../modules/vpc"
-#  project = "${var.project}"
-#  env     = "${local.env}"
-#}
-#
-#module "http_server" {
-#  source  = "../../modules/http_server"
-#  project = "${var.project}"
-#  subnet  = "${module.vpc.subnet}"
-#}
-#
-#module "firewall" {
-#  source  = "../../modules/firewall"
-#  project = "${var.project}"
-#  subnet  = "${module.vpc.subnet}"
+#provider "google" {
+#  project = "${var.project_id}"
+#  #access_token = var.access_token
+#  #region  = "${var.region}"
+#  #zone    = "${var.region}-a"
 #}
 
-
-
-#resource "google_project" "agent_project" {
-#  project_id = "noiseml-core-${local.env}"
-#  name = "noiseml-core-${local.env}"
-#}
-
-
+# DEMOS
 module "dialogflow_agent_demo" {
   source  = "../../modules/dialogflow_agent_demo"
+  project_id = "${var.project_id}"
+  region = "${var.region}"
+}
+
+# COMMON
+module "noiseml-core" {
+  source  = "../../modules/noiseml-core"
+  project_id = "${var.project_id}"
+  environment = "${var.environment}"
+  region = "${var.region}"
+  zone = "${var.zone}"
 }
 
 
