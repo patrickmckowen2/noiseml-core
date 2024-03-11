@@ -22,4 +22,10 @@ module "noiseml-core" {
   zone = "${var.zone}"
 }
 
-
+#module "neo4j" {
+#  source  = "../../modules/neo4j"
+#  #project_id = "${var.project_id}"
+#  #environment = "${var.environment}"
+#  #region = "${var.region}"
+#  #zone = "${var.zone}"
+#}
