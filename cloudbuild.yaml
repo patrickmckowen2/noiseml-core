@@ -1,4 +1,7 @@
+# The main build image for building the application through cicd
+
 steps:
+
 - id: 'branch name'
   name: 'alpine'
   entrypoint: 'sh'  
@@ -75,3 +78,10 @@ steps:
         echo "*******************************************************************************"
       fi
 # [END tf-apply]      
+
+
+options:
+  automapSubstitutions: true
+
+#substitutions:
+#  _USER: "Google Cloud"
