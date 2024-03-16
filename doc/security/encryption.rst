@@ -1,0 +1,1 @@
+https://www.slingacademy.com/article/using-bcrypt-and-md5-functions-in-terraform/
