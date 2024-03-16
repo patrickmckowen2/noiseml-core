@@ -1,0 +1,1 @@
+https://github.com/GoogleCloudPlatform/python-docs-samples/tree/af95f03e477a1d366af2ba49963378273b2650f5/generative_ai
